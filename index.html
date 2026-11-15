@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
 <title>Omargani M.E.S. College</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
@@ -12,19 +16,9 @@
   --f-body:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;
   --f-head:'Barlow Condensed','Hind Siliguri',system-ui,sans-serif;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0f171b; --surface:#16222a; --fg:#e6eef2; --muted:#9db0ba; --line:#263640;
-  --teal:#2cc4cc; --teal-d:#2cc4cc; --teal-soft:#13303a;
-  --plum:#b05bb3; --plum-d:#c377c6; --band:#0b6f75; --nav-fg:#5fd6dc; --head-fg:#f1f6f8;
-  --shadow:0 6px 18px rgba(0,0,0,.5); color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f171b; --surface:#16222a; --fg:#e6eef2; --muted:#9db0ba; --line:#263640;
-  --teal:#2cc4cc; --teal-d:#2cc4cc; --teal-soft:#13303a;
-  --plum:#b05bb3; --plum-d:#c377c6; --band:#0b6f75; --nav-fg:#5fd6dc; --head-fg:#f1f6f8;
-  --shadow:0 6px 18px rgba(0,0,0,.5); color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;
   padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
 a{color:inherit;text-decoration:none}
 button,input,select{font:inherit;color:inherit}
@@ -35,11 +29,10 @@ button,input,select{font:inherit;color:inherit}
 .strip{background:var(--teal);color:#fff;font-weight:600;font-size:14px}
 .strip .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:7px}
 .strip a{margin-left:14px;font-weight:700}
-.demo-flag{background:#fff3c4;color:#5a4300;text-align:center;font-size:13px;padding:5px 12px}
 
 /* identity */
 .ident .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding-block:22px}
-.logo{width:92px;height:92px}
+.logo{width:92px;height:92px;object-fit:contain}
 .ident h1{margin:0;text-align:center;line-height:1.15;color:var(--head-fg)}
 .ident h1 .bn{display:block;font-size:clamp(28px,4.6vw,46px);font-weight:700}
 .ident h1 .en{display:block;font-family:var(--f-head);font-size:clamp(26px,4.2vw,42px);font-weight:700;letter-spacing:.3px}
@@ -63,7 +56,6 @@ button,input,select{font:inherit;color:inherit}
 .pay{background:var(--plum);color:#fff;font-family:var(--f-head);font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:10px 22px;border-radius:999px;white-space:nowrap}
 .pay:hover{background:var(--plum-d)}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
-.theme{background:none;border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:13px}
 
 /* news band */
 .band{background:var(--band);color:var(--on-band)}
@@ -133,7 +125,6 @@ section.block{padding-block:42px}
 
 .sheet-scroll{overflow-x:auto;margin-top:26px}
 .sheet{min-width:640px;position:relative;background:#fff;color:#1b1b1b;padding:26px 28px;border:6px double #d94f6b;outline:4px dotted #e9a53a;outline-offset:6px;font-size:14px}
-.sheet::after{content:"DEMO";position:absolute;inset:0;display:grid;place-items:center;font:700 140px var(--f-head);color:rgba(217,79,107,.10);transform:rotate(-24deg);pointer-events:none}
 .sheet h4{margin:0;text-align:center;font-size:21px}
 .sheet .addr{text-align:center;font-size:12.5px;margin:2px 0 10px}
 .sheet h5{text-align:center;text-decoration:underline;font-size:17px;margin:10px 0 12px}
@@ -174,18 +165,13 @@ footer p{margin:0 0 6px;font-size:14.5px}
 }
 @media (prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0;white-space:normal}.card,.nb-left a{transition:none}}
 </style>
+</head>
+<body>
 
 <div class="strip"><div class="wrap"><span id="eiin"></span><span><a href="#login">Login</a></span></div></div>
-<div class="demo-flag"></div>
 
 <header class="ident"><div class="wrap">
-  <svg class="logo" viewBox="0 0 100 100" role="img" aria-label="College logo">
-    <circle cx="50" cy="50" r="46" fill="none" stroke="#7a1f7c" stroke-width="4"/>
-    <circle cx="50" cy="50" r="38" fill="#0e9fa6"/>
-    <path d="M50 24c6 8 12 12 12 20a12 12 0 0 1-24 0c0-8 6-12 12-20z" fill="#fff"/>
-    <path d="M26 58l24 8 24-8v8l-24 8-24-8z" fill="#fff" opacity=".92"/>
-    <path d="M50 66v8" stroke="#0e9fa6" stroke-width="2"/>
-  </svg>
+  <img class="logo" src="https://i.ibb.co.com/6Xy1kL1p/image_11b395.png" alt="Omargani M.E.S. College Logo">
   <h1><span class="bn" id="nameBn"></span><span class="en" id="nameEn"></span></h1>
   <div class="contact" id="contact"></div>
 </div></header>
@@ -194,7 +180,6 @@ footer p{margin:0 0 6px;font-size:14.5px}
   <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
   <ul class="menu" id="menu"></ul>
   <span style="display:flex;gap:10px;align-items:center">
-    <button class="theme" id="theme" aria-label="Switch light or dark theme">Theme</button>
     <a class="pay" href="#fees">Fees Payment</a>
   </span>
 </div></nav>
@@ -260,6 +245,7 @@ const SITE = {
     ]
   }
 };
+
 const RESULTS = [
   {
     roll:'1001', cls:'Twelve', group:'Science', session:'2025-2026', exam:'1st Year Final',
@@ -306,7 +292,7 @@ $('#nameBn').textContent=SITE.nameBn; $('#nameEn').textContent=SITE.nameEn;
 document.title=SITE.nameEn;
 $('#contact').innerHTML='<b>Call Us</b><span>'+esc(SITE.phones)+'</span><b>Mail Us</b><span>'+esc(SITE.email)+'</span>';
 $('#fName').textContent=SITE.nameEn; $('#fAddr').textContent=SITE.address; $('#fPhone').textContent=SITE.phones; $('#fMail').textContent=SITE.email;
-$('#copy').textContent='© '+new Date().getFullYear()+' '+SITE.nameEn+'. Demo template.';
+$('#copy').textContent='© '+new Date().getFullYear()+' '+SITE.nameEn+'. All rights reserved.';
 
 /* menu */
 function buildMenu(){
@@ -328,12 +314,6 @@ function closeMenus(){document.querySelectorAll('.menu>li.open').forEach(x=>{x.c
 document.addEventListener('click',e=>{if(!e.target.closest('.menu'))closeMenus()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
 $('#burger').onclick=()=>{const s=$('#menu').classList.toggle('show');$('#burger').setAttribute('aria-expanded',s)};
-
-/* theme toggle */
-$('#theme').onclick=()=>{
-  const r=document.documentElement,cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-  r.setAttribute('data-theme',cur==='dark'?'light':'dark');
-};
 
 /* views */
 const views={
@@ -397,7 +377,7 @@ function sheet(r){
   const gpa=fail?0:Math.min(5,(pts+bonus)/n);
   return `<div class="sheet-scroll"><div class="sheet">
     <h4>${esc(SITE.nameEn)}</h4><div class="addr">${esc(SITE.address)}</div>
-    <h5>Academic Transcript (Sample)</h5>
+    <h5>Academic Transcript</h5>
     <dl><dt>Student's Name</dt><dd>${esc(r.name)}</dd><dt>Roll No.</dt><dd>${r.roll}</dd>
       <dt>Father's Name</dt><dd>${esc(r.father)}</dd><dt>Student ID</dt><dd>${r.sid}</dd>
       <dt>Mother's Name</dt><dd>${esc(r.mother)}</dd><dt>Class</dt><dd>${r.cls}</dd>
@@ -437,3 +417,5 @@ const topBtn=$('#top');
 addEventListener('scroll',()=>topBtn.classList.toggle('on',scrollY>400),{passive:true});
 topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 </script>
+</body>
+</html>
